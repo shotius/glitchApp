@@ -25,8 +25,10 @@ app.get("/api/hello", function (req, res) {
 });
 
 app.get("/api/whoami", (req, res) => {
-  res.json({ipaddress:"not set",
-           language: "not set"})
+  var ip = req.ip.split(":")[3]
+  res.json({ipaddress: ip,
+           language: "not set",
+           software: "not set"})
 })
 
 
